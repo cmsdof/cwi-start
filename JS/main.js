@@ -49,20 +49,5 @@
     console.log(thisIsCode < thisIsNotCode); //False
     console.log(thisIsCode >= thisIsNotCode); //True
     console.log(thisIsCode <= thisIsNotCode); //False
-
-
-    const firstName = "Carlos";
-    const lastName = "Severo";
-    console.log(`My name is ${firstName} ${lastName}!`);
-    
-    let names = "John, Mary, Bob";
-    console.log(names.toUpperCase());
-
-
-    console.log(number * 5);
-
-    const x = null;
-    const y = undefined;
-
-    const array = [1, 2, 3, 4, 5];
-    console.log(array);
+    console.log(thisIsCode && thisIsNotCode); //False
+    console.log(thisIsCode || thisIsNotCode); //True
