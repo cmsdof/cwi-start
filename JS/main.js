@@ -24,33 +24,35 @@
     };
     console.log(person);
 
-    //Operators
+    //Mathmatical Operators
     let number = 5;
     let sum = number + 10; //Result 15
     let difference = 10 - number; //Result 5
     let product = number * 10; //Result 50
     let quotient = 10 / number; //Result 2
     let remainder = 10 % number; //Result 0
+    let exponent = number ** 2; //Result 25
 
-    number += 5; //Result 10
-    console.log(number);
-    number -= 5; //Result 5
-    console.log(number);
-    number *= 5; //Result 25
-    console.log(number);
-    number /= 5; //Result 5
-    console.log(number);
-    number %= 5; //Result 0
-    console.log(number);
+    // Operations
+    console.log(number += 5); //Result 10
+    console.log(number -= 5); //Result 5
+    console.log(number *= 5); //Result 25
+    console.log(number /= 5); //Result 5
+    console.log(number **= 5); //Result 3125
+    console.log(number %= 5); //Result 0
 
+    //Logical Operators
     console.log(thisIsCode == thisIsNotCode); //False
+    console.log(thisIsCode === thisIsNotCode); //False    
     console.log(thisIsCode != thisIsNotCode); //True
+    console.log(thisIsCode !== thisIsNotCode); //True
     console.log(thisIsCode > thisIsNotCode); //True
     console.log(thisIsCode < thisIsNotCode); //False
     console.log(thisIsCode >= thisIsNotCode); //True
     console.log(thisIsCode <= thisIsNotCode); //False
     console.log(thisIsCode && thisIsNotCode); //False
     console.log(thisIsCode || thisIsNotCode); //True
+    console.log(!thisIsCode); //False
 
     // Creating a Set from an Array
     const myArray = [1, 1, 2, 3, 3, 4, 5, 5];
@@ -60,7 +62,7 @@
     console.log(mySet);
 
 
-    // Set Methods
+    // Set
     mySet.add(6);
     console.log(mySet);
 
