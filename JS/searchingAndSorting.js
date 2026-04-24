@@ -23,7 +23,21 @@ function linearSearch(arr, target){
     return -1;
 }
 
-// 2. [TBA] Bubble Sort
+// 2. Bubble Sort
+function bubbleSort(arr){
+    for (let i in arr){
+        for (let j = 0; j < arr.length - 1; j++){
+            if (arr[j] > arr[j + 1]){
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+// 3. [TBA] Binary Search
 
 
 // Main
@@ -31,3 +45,6 @@ console.log("Original array: " + myArray);
 
 let target = 8;
 console.log(`Linear search for ${target}: Target is at position ${linearSearch(myArray, 8)}`);
+
+console.log(`\nOriginal array: ${myArray}`);
+console.log(`Sorted array: ${bubbleSort(myArray)}`);
