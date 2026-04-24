@@ -25,10 +25,12 @@ function linearSearch(arr, target){
 
 // 2. Bubble Sort
 function bubbleSort(arr){
-    let sorted = arr.slice(); // Copying of the original array to sort
+    // Copying of the original array to sort
+    let sorted = arr.slice(); 
     for (let i = 0; i < sorted.length; i++){
         for (let j = 0; j < sorted.length - 1; j++){
-            if (sorted[j] > sorted[j + 1]){
+            if (sorted[j] > sorted[j + 1]){ 
+                // Tests [j] > [j + 1], if true swaps
                 let temp = sorted[j];
                 sorted[j] = sorted[j + 1];
                 sorted[j + 1] = temp;
@@ -38,16 +40,39 @@ function bubbleSort(arr){
     return sorted;
 }
 
-// 3. [TBA] Binary Search
+// 3. Binary Search
+
+function binarySearch(arr, target){
+    let left = 0;
+    let right = arr.length -1;
+
+    while (left <= right){
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target){
+            return mid;
+        } else if (arr[mid] < target){
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return -1;
+}
+
+// 4. [TBA] Selection Sort
 
 
 // Main
-console.log("Original array: " + myArray);
+console.log(`\n--- Implementing search and sort algorithms:`);
+
+console.log("\nOriginal array: " + myArray);
 
 let target = 8;
-console.log(`Linear search for ${target}: Target is at position ${linearSearch(myArray, 8)}`);
-
 let sortedArray = bubbleSort(myArray);
+
+console.log(`\nLinear search for ${target}: Target is at position ${linearSearch(myArray, 8)}`);
+console.log(`Binary search for ${target}: Target is at position ${binarySearch(sortedArray, target)}`);
+
 console.log(`\nOriginal array: ${myArray}`);
 console.log(`Sorted array: ${sortedArray}`);
 
