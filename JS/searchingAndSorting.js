@@ -59,7 +59,10 @@ function binarySearch(arr, target){
     return -1;
 }
 
-// 4. [TBA] Selection Sort
+// 4. Selection Sort
+// 4.1 Find the smallest element in a list
+// 4.2 Swap it with the first element of the list
+// 4.3 Repeat it for the rest of the list
 
 
 // Main
