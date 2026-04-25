@@ -60,10 +60,22 @@ function binarySearch(arr, target){
 }
 
 // 4. Selection Sort
-// 4.1 Find the smallest element in a list
-// 4.2 Swap it with the first element of the list
-// 4.3 Repeat it for the rest of the list
-
+function selectionSort(arr){
+    let sorted = arr.slice();
+    for (let i = 0; i < sorted.length; i++){
+        // 4.1 Find the smallest element in a list
+        for (let j = i; j < sorted.length - 1; j++){
+            // 4.2 Swap it with the first element of the list
+            if (sorted[i] > sorted[j + 1]){
+                let temp = sorted[i];
+                sorted[i] = sorted[j + 1];
+                sorted[j + 1] = temp;
+            }
+        }
+        // 4.3 Repeat it for the rest of the list
+    }
+    return sorted;
+}
 
 // Main
 console.log(`\n--- Implementing search and sort algorithms:`);
@@ -77,6 +89,7 @@ console.log(`\nLinear search for ${target}: Target is at position ${linearSearch
 console.log(`Binary search for ${target}: Target is at position ${binarySearch(sortedArray, target)}`);
 
 console.log(`\nOriginal array: ${myArray}`);
-console.log(`Sorted array: ${sortedArray}`);
+console.log(`[Bubble Sort]: ${bubbleSort(myArray)}`);
+console.log(`[Selection Sort]: ${selectionSort(myArray)}`);
 
 console.log(`\nOriginal array unchanged: ${myArray}`);
