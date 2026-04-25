@@ -10,9 +10,6 @@ This file includes my implementations of searching and sorting algorithms.
     6. Quick Sort
     
 */
-
-let myArray = [6, 7, 2, 0, 4, 9, 3, 1, 5, 8];
-
 // 1. Linear Search
 function linearSearch(arr, target){
     for (let i = 0; i < arr.length; i++){
@@ -81,17 +78,62 @@ function selectionSort(arr){
 // 5.2 Divides list successively into halves until the smallest piece
 // 5.3 Merges pieces back together sorting them in the process
 
+function merge(left, right){
+    let result = [];
+    let i = 0, j = 0;
+
+    // 5.3.1 Compares two sorted lists until their last item 
+    while (i < left.length & j < right.length){
+        // 5.3 Compares the items of both lists and addes the smallest one to the result
+        if (left[i] < right[j]){
+            result.push(left[i]);
+            i++; 
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+    // 5.3 Checks for unsorted items in the lists
+    while (i < left.length) {
+        result.push(left[i]);
+        i++;
+    }
+    while (j < right.length) {
+        result.push(right[j]);
+        j++;
+    }
+    return result;
+}
+
+function mergeSort(arr){
+    let sorted = arr.slice();
+    // 5.1 Checks if the array is smaller than 2, meaning it is sorted, returning itself
+    if (sorted.length < 2){
+        return sorted;
+    } else {
+        // 5.2 Finds the middle point and sorts each half
+        let mid = Math.floor(sorted.length / 2);
+        let left = mergeSort(sorted.slice(0 , mid));
+        let right = mergeSort(sorted.slice(mid, sorted.length));
+        // 5.3 Merges each half together
+        return merge(left, right);
+    }
+}
+
 
 // 6. [TBA] Quick Sort
 
 // Main
-console.log(`\n--- Implementing search and sort algorithms:`);
+const myArray = [6, 7, 2, 0, 4, 9, 3, 1, 5, 8];
+const sortedArray = bubbleSort(myArray);
+const target = 8;
 
-let target = 8;
-let sortedArray = bubbleSort(myArray);
+console.log(`[Merge Sort]: ${mergeSort(myArray)}`);
+
+/* console.log(`\n--- Implementing search and sort algorithms:`);
 
 console.log("\nOriginal array: " + myArray);
-console.log(`[Linear search for ${target}] Found at index ${linearSearch(myArray, 8)}`);
+console.log(`[Linear search for ${target}] Found at index ${linearSearch(myArray, target)}`);
 
 console.log("\nSorted array: " + sortedArray);
 console.log(`[Binary search for ${target}] Found at index ${binarySearch(sortedArray, target)}`);
@@ -99,5 +141,6 @@ console.log(`[Binary search for ${target}] Found at index ${binarySearch(sortedA
 console.log(`\nOriginal array: ${myArray}`);
 console.log(`[Bubble Sort]: ${bubbleSort(myArray)}`);
 console.log(`[Selection Sort]: ${selectionSort(myArray)}`);
+console.log(`[Merge Sort]: ${mergeSort(myArray)}`);
 
-console.log(`\nOriginal array unchanged: ${myArray}`);
+console.log(`\nOriginal array unchanged: ${myArray}`); */
