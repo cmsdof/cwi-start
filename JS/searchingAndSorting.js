@@ -76,7 +76,12 @@ function selectionSort(arr){
     return sorted;
 }
 
-// 5. [TBA] Merge Sort
+// 5. Merge Sort
+// 5.1 A recursive algorithm divides and conquers the sorting task
+// 5.2 Divides list successively into halves until the smallest piece
+// 5.3 Merges pieces back together sorting them in the process
+
+
 // 6. [TBA] Quick Sort
 
 // Main
