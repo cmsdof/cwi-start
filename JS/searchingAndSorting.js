@@ -41,7 +41,6 @@ function bubbleSort(arr){
 }
 
 // 3. Binary Search
-
 function binarySearch(arr, target){
     let left = 0;
     let right = arr.length -1;
@@ -77,16 +76,20 @@ function selectionSort(arr){
     return sorted;
 }
 
+// 5. [TBA] Merge Sort
+// 6. [TBA] Quick Sort
+
 // Main
 console.log(`\n--- Implementing search and sort algorithms:`);
-
-console.log("\nOriginal array: " + myArray);
 
 let target = 8;
 let sortedArray = bubbleSort(myArray);
 
-console.log(`\nLinear search for ${target}: Target is at position ${linearSearch(myArray, 8)}`);
-console.log(`Binary search for ${target}: Target is at position ${binarySearch(sortedArray, target)}`);
+console.log("\nOriginal array: " + myArray);
+console.log(`[Linear search for ${target}] Found at index ${linearSearch(myArray, 8)}`);
+
+console.log("\nSorted array: " + sortedArray);
+console.log(`[Binary search for ${target}] Found at index ${binarySearch(sortedArray, target)}`);
 
 console.log(`\nOriginal array: ${myArray}`);
 console.log(`[Bubble Sort]: ${bubbleSort(myArray)}`);
