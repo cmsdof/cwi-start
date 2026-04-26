@@ -82,9 +82,9 @@ function merge(left, right){
     let result = [];
     let i = 0, j = 0;
 
-    // 5.3.1 Compares two sorted lists until their last item 
+    // 5.2.1 Compares two sorted lists until their last item 
     while (i < left.length & j < right.length){
-        // 5.3 Compares the items of both lists and addes the smallest one to the result
+    // 5.2.2 Compares the items of both lists and addes the smallest one to the result
         if (left[i] < right[j]){
             result.push(left[i]);
             i++; 
@@ -93,7 +93,7 @@ function merge(left, right){
             j++;
         }
     }
-    // 5.3 Checks for unsorted items in the lists
+    // 5.2.3 Checks for unsorted items in the lists
     while (i < left.length) {
         result.push(left[i]);
         i++;
@@ -111,11 +111,11 @@ function mergeSort(arr){
     if (sorted.length < 2){
         return sorted;
     } else {
-        // 5.2 Finds the middle point and sorts each half
+    // 5.2 Finds the middle point and sorts each half
         let mid = Math.floor(sorted.length / 2);
         let left = mergeSort(sorted.slice(0 , mid));
         let right = mergeSort(sorted.slice(mid, sorted.length));
-        // 5.3 Merges each half together
+    // 5.3 Merges each half together
         return merge(left, right);
     }
 }
@@ -128,9 +128,7 @@ const myArray = [6, 7, 2, 0, 4, 9, 3, 1, 5, 8];
 const sortedArray = bubbleSort(myArray);
 const target = 8;
 
-console.log(`[Merge Sort]: ${mergeSort(myArray)}`);
-
-/* console.log(`\n--- Implementing search and sort algorithms:`);
+console.log(`\n--- Implementing search and sort algorithms:`);
 
 console.log("\nOriginal array: " + myArray);
 console.log(`[Linear search for ${target}] Found at index ${linearSearch(myArray, target)}`);
@@ -143,4 +141,4 @@ console.log(`[Bubble Sort]: ${bubbleSort(myArray)}`);
 console.log(`[Selection Sort]: ${selectionSort(myArray)}`);
 console.log(`[Merge Sort]: ${mergeSort(myArray)}`);
 
-console.log(`\nOriginal array unchanged: ${myArray}`); */
+console.log(`\nOriginal array unchanged: ${myArray}`);
